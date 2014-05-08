@@ -1,0 +1,14 @@
+This is a script I use for setting up clusters for certification using these m2.4xlarge instances. You don't have to use it but it saves me time. After standing up your 4-5 m2.4xlarge instances with centos, put the hostnames into a file called "cluster". Put your ./pem file in the same directory. Then run this script as so:
+
+./init-cluster.sh <path-to-pemfile>
+
+Script will do the following on all nodes:
+-disable selinux
+-enable ntpd
+-disable iptables
+-mount the instance based storage
+-move /var/log, /var/lib/ and /opt/cloudera to the instance based storage
+-reboot the host (for selinux changes to take)
+-On the master node (the first node in the "clusters" file) it'll get the cloudera-manager-installer.bin file for you.
+
+At the conclusion of the script, ssh to the master node and run the cloudera-manager-installer.bin file, select the classic wizard (not the ec2 wizard) and run through the install process as if you're setting up a fresh cluster. Copy and paste the clusters file into the hosts window when prompted.
