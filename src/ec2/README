@@ -1,4 +1,4 @@
-This is a script I use for setting up clusters for certification using these m2.4xlarge instances. You don't have to use it but it saves me time. After standing up your 4-5 m2.4xlarge instances with centos, put the hostnames into a file called "cluster". Put your ./pem file in the same directory. Then run this script as so:
+This is a script I use for setting up clusters for certification using the ami-a25415cb AMI on m2.4xlarge instances. You don't have to use it but it saves me time. After standing up your 4-5 m2.4xlarge instances with the ami-a25415cb AMI (RHEL-6.4), put the hostnames into a file called "cluster". Put your ./pem file in the same directory. Then run this script as so:
 
 ./init-cluster.sh <path-to-pemfile>
 
