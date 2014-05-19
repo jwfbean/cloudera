@@ -9,22 +9,11 @@ import java.sql.DriverManager;
  
 public class JdbcClient {
   private static String driverName = "org.apache.hive.jdbc.HiveDriver";
-  /* 
-   * private static String hive_url = "jdbc:hive2://ip-10-171-6-67.ec2.internal:10000/default";
-  
-  private static String hive_user = "ec2-user";
-  private static String hive_pw = "";
-  private static String impala_url = "jdbc:hive2://ip-10-232-28-131.ec2.internal:21050/;auth=noSasl";
-  private static String impala_user = "ec2-user"; 
-  private static String impala_pw = "";
-  private static String hive_user = "user1@cloudera.com";
-  private static String hive_pw = "Cloudera!";
-  private static String impala_url = "jdbc:hive2://ip-10-232-28-131.ec2.internal:21050/";
-  private static String impala_user = "user1@cloudera.com"; 
-  private static String impala_pw = "Cloudera!";
-  */
   
   /**
+   * Method from Apache example to create a table and load it. 
+   * Kept the method in case you want to call it in your example.
+   *
    * @param args
    * @throws SQLException
    */
@@ -57,15 +46,15 @@ public class JdbcClient {
     System.out.println("Running: " + sql);
     stmt.execute(sql);
   }
-  
+ 
+/**
+ * Return 20 rows from sample_07. Count rows from sample_07.
+ */
+
   public static void sampleQueries(String url, String user, String pw) throws SQLException {
 	    Connection con = DriverManager.getConnection(url, user, pw);
 	    Statement stmt = con.createStatement();
 	    String tableName = "sample_07";
-	     // describe table
-
-	 
-	    // select * query
 	    String sql = "select * from " + tableName + " limit 20";
 	    System.out.println("Running: " + sql);
 	    ResultSet res = stmt.executeQuery(sql);
@@ -73,7 +62,6 @@ public class JdbcClient {
 	      System.out.println(res.getString(1) + "\t" + res.getString(2) + "\t" + String.valueOf(res.getInt(3)) + "\t" + String.valueOf(res.getInt(4)));
 	    }
 	 
-	    // regular hive query
 	    sql = "select count(1) from " + tableName;
 	    System.out.println("Running: " + sql);
 	    res = stmt.executeQuery(sql);
@@ -81,7 +69,11 @@ public class JdbcClient {
 	      System.out.println(res.getString(1));
 	    }
 	  }
-  
+ 
+/**
+ * This issues an "invalidate metadata" command to Impala.
+ */
+ 
   public static void invalidateMetadata(String impala_url) throws SQLException {
 	    Connection con = DriverManager.getConnection(impala_url);
 	    Statement stmt = con.createStatement();
@@ -93,6 +85,13 @@ public class JdbcClient {
 		  System.out.println("Usage: JdbcClient jdbc-url username password");
 		  System.out.println("Impala uses any instance of impalad, port 21050");
 		  System.out.println("Hive uses instance of HiveServer2, port 10000");
+                  System.out.println();
+                  System.out.println("Hive example:");
+                  System.out.println("JdbcClient hiveserver-2-url:10000 ec2-user ec2");
+                  System.out.println();
+                  System.out.println("Impala example:");
+                  System.out.println("JdbcClient impala-url:21050 ec2-user ec2");
+ 
 		  System.exit(1);
 	  }
       try {
