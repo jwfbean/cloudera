@@ -51,7 +51,7 @@ echo_local_hostname() {
 move_var_lib() {
   ssh -t -i $PEM $USER@$HOST sudo mkdir -p /data01/var/lib
   ssh -t -i $PEM $USER@$HOST sudo chmod 777 /data01/var/lib
-  ssh -t -i $PEM $USER@$HOST sudo cp -R /var/lib /data01/var
+  ssh -t -i $PEM $USER@$HOST sudo cp -R /var/lib /data01/var/lib
   ssh -t -i $PEM $USER@$HOST sudo mv /var/lib /var/lib.old
   ssh -t -i $PEM $USER@$HOST sudo ln -s /data01/var/lib /var/lib
 }
