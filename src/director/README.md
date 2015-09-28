@@ -2,9 +2,9 @@
 
 ## Cloudera Director Config Files
 
-**aws.simple.conf** specifies a 5 node cluster on the specified VPC
+**aws.simple.conf** specifies a 5 node cluster on the specified VPC using m3.xlarge instances
 
-**dev.conf** specifies a 3 node cluster on the specified VPC (HDFS comes up red)
+**dev.conf** specifies a 3 node cluster on the specified VPC (HDFS comes up red due to underreplicated blocks) using m3.xlarge instances
 
 ## Helper scripts
 
@@ -23,7 +23,7 @@ from the launcher
 
 ## One time only
 * Create a subnet and VPC in EC2
-* Edit the create-cluster.sh script(s) to specify your AWS access credentials
+* Edit the create-cluster.sh script(s) to specify your AWS access credentials (grep for CHANGE-ME)
 * Edit the aws.simple.conf and/or dev.conf files to specify your subnet and 
 security groups
 
