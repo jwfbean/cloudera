@@ -3,17 +3,20 @@
 ## Cloudera Director Config Files
 
 **aws.simple.conf** specifies a 5 node cluster on the specified VPC
+
 **dev.conf** specifies a 3 node cluster on the specified VPC (HDFS comes up red)
 
 ## Helper scripts
 
 **create-dev-cluster.sh** launches the cluster specified by
 dev.conf from the launcher
+
 **create-cluster.sh** launches the cluster specified by aws.simple.conf
 from the launcher
 
 ## Scripts to invoke
 **prepnlaunch-dev.sh** launches a 3 node cluster
+
 **prepnlaunch.sh** launches a 5 node cluster
 
 # Instructions for use
