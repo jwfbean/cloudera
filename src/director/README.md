@@ -25,7 +25,7 @@ from the launcher
 * Create a subnet and VPC in EC2
 * Edit the create-cluster.sh script(s) to specify your AWS access credentials (grep for CHANGE-ME)
 * Edit the aws.simple.conf and/or dev.conf files to specify your subnet and 
-security groups
+security groups (grep for CHANGE-ME)
 * place your pem file in the same directory as the prepnlaunch.sh script, name it hadoopsecurity.pem or edit the script
 
 ## Every time you launch a cluster
