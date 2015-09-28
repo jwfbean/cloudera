@@ -26,6 +26,7 @@ from the launcher
 * Edit the create-cluster.sh script(s) to specify your AWS access credentials (grep for CHANGE-ME)
 * Edit the aws.simple.conf and/or dev.conf files to specify your subnet and 
 security groups
+* place your pem file in the same directory as the prepnlaunch.sh script, name it hadoopsecurity.pem or edit the script
 
 ## Every time you launch a cluster
 * Spawn a launcher using ami-c318a8a8
