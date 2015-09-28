@@ -28,7 +28,7 @@ from the launcher
 security groups
 
 ## Every time you launch a cluster
-* Spawn a launcher
+* Spawn a launcher using ami-c318a8a8
 * Place the aws hostname of the launcher in a file called launcher
 * Run ./prepnlaunch.sh
 
