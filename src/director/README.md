@@ -37,3 +37,8 @@ security groups (grep for CHANGE-ME)
 * **ami-c318a8a8** - Cloudera Director CSC (Client, Server, Config) a Cloudera Director Launcher preinstalled
 * **ami-8767d1ec** - CDH5.4 Node preconfigured Centos node with CDH5.4 parcel preinstalled 
 * **ami-a3daa0c6** - AD Server preconfigured with cm user for kerberization (Admin and CM password Passw0rd!)
+
+## AMIs created in eu-west
+* **ami-2957655e** - Cloudera Director CSC (Client, Server, Config) a Cloudera Director Launcher preinstalled
+* **ami-23576554** - CDH5.4 Node preconfigured Centos node with CDH5.4 parcel preinstalled 
+* **ami-2d57655a** - AD Server preconfigured with cm user for kerberization (Admin and CM password Passw0rd!)
